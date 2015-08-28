@@ -69,6 +69,24 @@
             $this->assertEquals($test_store, $result[0]);
         }
 
+        function test_getALl()
+        {
+            //Arrange
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "Shoe Deopt" ;
+            $test_store2 = new Store($store_name);
+            $test_store2->save();
+
+            //Act
+            $result = Store::getAll();
+
+            //Assert
+            $this->assertEquals([$test_store2, $test_store], $result);
+        }
+
     }
 
 ?>
