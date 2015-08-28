@@ -34,6 +34,7 @@
         }
 
         //Save and Update methods
+
         function save()
         {
             $GLOBALS['DB']->exec("INSERT INTO stores (store_name) VALUES ('{$this->getName()}');");
@@ -47,6 +48,7 @@
         }
 
         //delete a single store
+
         function delete()
         {
             $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
@@ -54,6 +56,7 @@
 
 
         //Static Methods
+
         static function getAll()
         {
             $returned_stores = $GLOBALS['DB']->query("SELECT * FROM stores ORDER BY store_name;");
