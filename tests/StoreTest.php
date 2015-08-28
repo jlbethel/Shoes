@@ -85,15 +85,13 @@
             $test_store = new Store($store_name);
             $test_store->save();
 
-            $store_name2 = "Shoe Deopt" ;
-            $test_store->updateName($store_name2);
+            $store_name2 = "Shoe Depot";
 
             //Act
-            $id = $test_store->getId();
-            $result = new Store($store_name, $id);
+            $test_store->updateName($store_name2);
 
             //Assert
-            $this->assertEquals(Store::find($id), $result);
+            $this->assertEquals("Shoe Depot", $test_store->getName());
         }
 
         //Test for deleting a single store

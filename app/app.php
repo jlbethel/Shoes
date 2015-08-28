@@ -106,11 +106,11 @@
     });
 
 
-    // $app->delete("/delete_store/{id}", function($id) use($app){
-    //         $store = Store::find($id);
-    //         $store->delete();
-    //         return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
-    //     });
+    $app->delete("/delete_store/{id}", function($id) use($app){
+            $store = Store::find($id);
+            $store->delete();
+            return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
+        });
 
     return $app;
 ?>
