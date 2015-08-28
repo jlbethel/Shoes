@@ -16,6 +16,12 @@
         {
             $this->brand_name = $new_name;
         }
+
+        //Getters
+        function getName()
+        {
+            return $this->brand_name;
+        }
     }
 
  ?>
