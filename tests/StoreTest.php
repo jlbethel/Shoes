@@ -41,7 +41,21 @@
             $this->assertEquals("Shoe Depot", $result);
         }
 
-        // function testGetId()
+        function testGetId()
+        {
+            //Arrange
+            $store_name = "Shoe World";
+            $id = 1;
+            $test_store = new Store($store_name, $id);
+
+            //Act
+            $result = $test_store->getId();
+
+            //Assert
+            $this->assertEquals($test_store, $result[0]);
+        }
+
+
     }
 
 ?>
