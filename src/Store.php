@@ -11,7 +11,22 @@
             $this->id = $id;
         }
 
-        
+        //Setters
+
+        function setStoreName($new_name) {
+            $this->name = $new_name;
+        }
+
+
+
+        //Getters
+
+        function getStoreName() {
+            return $this->name;
+        }
+
+
+
     }
 
 ?>
