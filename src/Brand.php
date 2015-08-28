@@ -22,6 +22,11 @@
         {
             return $this->brand_name;
         }
+
+        function getId()
+        {
+            return $this->id;
+        }
     }
 
  ?>
