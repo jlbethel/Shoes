@@ -175,7 +175,7 @@
 
         function test_addBrand()
         {
-            //Assert
+            //Arrange
             $brand_name = "La Sportiva";
             $test_brand = new Brand($brand_name);
             $test_brand->save();
@@ -190,6 +190,25 @@
 
             //Assert
             $this->assertEquals($test_store->getBrands(), $result);
+        }
+
+        function test_getBrands()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $test_store->addBrand($test_brand);
+            $result = $test_store->getBrands();
+
+            //Assert
+            $this->assertEquals([$test_brand], $result);
         }
 
     }
