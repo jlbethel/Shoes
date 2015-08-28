@@ -13,16 +13,16 @@
 
         //Setters
 
-        function setStoreName($new_name) {
-            $this->name = $new_name;
+        function seName($new_name) {
+            $this->store_name = $new_name;
         }
 
 
 
         //Getters
 
-        function getStoreName() {
-            return $this->name;
+        function getName() {
+            return $this->store_name;
         }
 
 

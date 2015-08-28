@@ -14,7 +14,7 @@
 
     class StoreTest extends PHPUnit_Framework_TestCase
     {
-        function testGetStoreName()
+        function testGetName()
         {
             //Arrange
             $store_name = "Shoe World";
