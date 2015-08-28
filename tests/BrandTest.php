@@ -34,5 +34,20 @@
             //Assert
             $this->assertEquals("Evolv", $result);
         }
+
+        //Getter tests
+        function testGetName()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+
+            //Act
+            $result = $test_brand->getName();
+
+            //Assert
+            $this->assertEquals($brand_name, $result);
+        }
+
     }
 ?>

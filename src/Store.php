@@ -12,7 +12,7 @@
             $this->id = $id;
         }
 
-        //Setters
+        //Setter
 
         function setName($new_name)
         {

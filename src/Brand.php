@@ -10,6 +10,12 @@
             $this->brand_name = $brand_name;
             $this->id = $id;
         }
+
+        //Setter
+        function setName($new_name)
+        {
+            $this->brand_name = $new_name;
+        }
     }
 
  ?>
