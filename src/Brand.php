@@ -70,6 +70,31 @@
             }
             return $found_brand;
         }
+
+        //methods that interact with join tables or use join statements
+
+        function addStore($store)
+        {
+            $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$store->getId()});");
+        }
+
+        function getStores()
+        {
+            $returned_stores = $GLOBALS['DB']->query("SELECT FROM stores.* FROM brands
+                JOIN brands_stores ON (brands.id = brands_stores.brand_id)
+                JOIN brands_stores ON (stores.id = brands_stores.store.id)
+                WHERE brands.id = {$this->getId()};");
+                var_dump($returned_stores);
+
+                $stores = [];
+                foreach($returned_stores as $store) {
+                    $store_name = $store['store_name'];
+                    $id = $store['id'];
+                    $new_store = new Store($store_name, $id);
+                    array_push($stores, $new_store);
+                }
+                return $stores;
+        }
     }
 
  ?>
