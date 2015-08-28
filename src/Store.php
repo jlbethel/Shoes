@@ -13,7 +13,8 @@
 
         //Setters
 
-        function setName($new_name) {
+        function setName($new_name)
+        {
             $this->store_name = $new_name;
         }
 
@@ -21,11 +22,15 @@
 
         //Getters
 
-        function getName() {
+        function getName()
+        {
             return $this->store_name;
         }
 
-
+        function getId()
+        {
+            return $this->id;
+        }
 
     }
 

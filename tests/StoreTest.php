@@ -52,7 +52,7 @@
             $result = $test_store->getId();
 
             //Assert
-            $this->assertEquals($test_store, $result[0]);
+            $this->assertEquals(true, is_numeric($result));
         }
 
 
