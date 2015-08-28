@@ -98,7 +98,15 @@
         return $app['twig']->render('edit_store.html.twig', array('store' => $store));
         });
 
-    // $app->delete("/stores/{id}", function($id) use($app){
+    $app->patch("/stores/{id}", function($id) use($app){
+        $store_name = $_POST['store_name'];
+        $store = Store::find($id);
+        $store->updateName($store_name);
+        return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $store->getBrands(), 'all_brands' => Brand::getAll()));
+    });
+
+
+    // $app->delete("/delete_store/{id}", function($id) use($app){
     //         $store = Store::find($id);
     //         $store->delete();
     //         return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
