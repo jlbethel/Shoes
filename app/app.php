@@ -50,6 +50,13 @@
         return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'stores' => $stores, 'all_stores' => Store::getAll()));
     });
 
+    $app->post("/add_stores", function() use($app){
+        $store = Store::find($_POST['store_id']);
+        $brand = Brand::find($_POST['brand_id']);
+        $brand->addStore($store);
+        return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'stores' => $brand->getStores(), 'all_stores' => Store::getAll()));
+    });
+
     //paths to stores list page
     $app->get("/stores", function () use($app) {
         return $app['twig']->render('stores.html.twig', array('stores'=>Store::getAll()));
