@@ -92,11 +92,10 @@
         return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $store->getBrands(), 'all_brands' => Brand::getAll()));
     });
 
-    paths for individual store edit pages
+    //paths for individual store edit pages
     $app->get("/stores/{id}/edit", function($id) use($app){
-            $stores = Store::find($id);
-            $brands = $store->getBrands();
-            return $app['twig']->render('edit_store.html.twig', array('store' => $store, 'brands' => $brands));
+        $store = Store::find($id);
+        return $app['twig']->render('edit_store.html.twig', array('store' => $store));
         });
 
     // $app->delete("/stores/{id}", function($id) use($app){
