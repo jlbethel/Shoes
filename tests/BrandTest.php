@@ -135,5 +135,45 @@
             $this->assertEquals($test_brand, $result);
         }
 
+        //tests methods that interact with join tables or use join statements
+
+        function test_addStore()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $result = [$test_store];
+            $test_brand->addStore($test_store);
+
+            //Assert
+            $this->assertEquals($test_brand->getStores(), $result);
+        }
+
+        function test_getStores()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $test_brand->addStore($test_store);
+            $result = $test_brand->getStores();
+
+            //Assert
+            $this->assertEquals([$test_store], $result);
+        }
+
     }
 ?>
