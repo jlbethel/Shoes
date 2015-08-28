@@ -55,6 +55,19 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function testSave()
+        {
+            //Arrange
+            $store_name = "Shoes World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $result = Store::getAll();
+
+            //Assert
+            $this->assertEquals($test_store, $result[0]);
+        }
 
     }
 
