@@ -47,7 +47,10 @@
         }
 
         //delete a single store
-        
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
+        }
 
 
         //Static Methods
