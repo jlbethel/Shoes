@@ -28,12 +28,12 @@ An app that allows users to add stylists to a database via a webpage. There are 
 9. Enjoy
 
 10. If interested here are the commands I used in the MySql terminal:
-    MySQL
+    MySQL:
     ```CREATE DATABASE shoes;```
     ```USE shoes;```
     ```CREATE TABLE stores (id serial PRIMARY KEY, store_name varchar (255));```
 
-    phpMyAdmin
+    phpMyAdmin:
     I used phpmyadmin to create the test database instead of the terminal:
     select shoes
     click opperations on the right section of the browser
@@ -41,18 +41,18 @@ An app that allows users to add stylists to a database via a webpage. There are 
     click Structure only
     click go
 
-    Back to MySQL
+    Back to MySQL:
     ```CREATE TABLE brands (id serial PRIMARY KEY, brand_name varchar (255));```
     ```DROP DATABASE shoes_test;```
 
-    phpMyAdmin
+    phpMyAdmin:
     re-create the test database using phyadmin by following the steps above
 
-    MySQL
+    MySQL:
     Time to make the join table. Type ```CREATE TABLE brands_stores (id serial PRIMARY KEY, store_id int, brand_id int);```
     ```DROP DATABASE shoes_test;```
 
-    phpMyAdmin
+    phpMyAdmin:
     re-create the test database using phyadmin by following the steps above
 
 
