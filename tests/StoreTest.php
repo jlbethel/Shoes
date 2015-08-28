@@ -74,6 +74,25 @@
             $this->assertEquals($test_store, $result[0]);
         }
 
+        function testUpdateName()
+        {
+            //Arrange
+            //Arrange
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "Shoe Deopt" ;
+            $test_store->updateName($store_name2);
+
+            //Act
+            $id = $test_store->getId();
+            $result = new Store($store_name, $id);
+
+            //Assert
+            $this->assertEquals(Store::find($id), $result);
+        }
+
         function test_getAll()
         {
             //Arrange

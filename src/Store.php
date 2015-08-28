@@ -33,7 +33,7 @@
             return $this->id;
         }
 
-        //Save
+        //Save and Update methods
         function save()
         {
             $GLOBALS['DB']->exec("INSERT INTO stores (store_name) VALUES ('{$this->getName()}');");
