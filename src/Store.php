@@ -13,7 +13,7 @@
 
         //Setters
 
-        function seName($new_name) {
+        function setName($new_name) {
             $this->store_name = $new_name;
         }
 
