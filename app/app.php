@@ -26,8 +26,9 @@
         return $app['twig']->render('index.html.twig');
     });
 
-    $app->get("/shoes", function () use($app) {
-        return $app['twig']->render('shoes.html.twig', array('shoes'=>Shoe::getAll()));
+    //path to Shoes list page
+    $app->get("/brands", function () use($app) {
+        return $app['twig']->render('brands.html.twig', array('brands'=>Brand::getAll()));
     });
 
     return $app;
