@@ -58,7 +58,7 @@
         function testSave()
         {
             //Arrange
-            $store_name = "Shoes World";
+            $store_name = "Shoe World";
             $test_store = new Store($store_name);
             $test_store->save();
 
