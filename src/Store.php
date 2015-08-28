@@ -1,20 +1,17 @@
 <?php
-    /**
-    * @backupGlobals disabled
-    * @backupStaticAttributes disabled
-    */
 
-    require_once "src/Store.php";
-    // require_once "src/Brand.php";
+    class Store {
 
-    $server = 'mysql:host=localhost;dbname=registrar_test';
-    $username = 'root';
-    $password = 'root';
-    $DB = new PDO($server, $username, $password);
+        private $store_name;
+        private $id;
 
-    class StoreTest extends PHPUnit_Framework_TestCase
-    {
-      
+        function __construct($store_name, $id = NULL) {
+
+            $this->store_name = $store_name;
+            $this->id = $id;
+        }
+
+        
     }
 
 ?>
