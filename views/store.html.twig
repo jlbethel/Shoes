@@ -5,14 +5,14 @@
     <body>
         <h1>{{ store.getName }}</h1>
         {% if brands is not empty %}
-        <p>Here are the brands that carry {{ store.getName }}</p>
+        <p>Here are the brands that {{ store.getName }} carries.</p>
         <ul>
             {% for brand in brands %}
                 <p>{{ brand.getName }}</p>
             {% endfor %}
         </ul>
         {% else %}
-            <p> No brands carry {{ store.getName }}</p>
+            <p>{{ store.getName }} currently has no brands in stock.</p>
         {% endif %}
 
         <form action="/add_brands" method="post">
