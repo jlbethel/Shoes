@@ -6,7 +6,11 @@
     //Set up debugging and Silex path
     use Symfony\Component\Debug\Debug;
     Debug::enable();
+
     $app = new Silex\Application();
+
+
+    $app['debug'] = true;
 
     //Set path to MySQL
     $server = 'mysql:host=localhost;dbname=shoes';
@@ -85,11 +89,21 @@
         $brand = Brand::find($_POST['brand_id']);
         $store = Store::find($_POST['store_id']);
         $store->addBrand($brand);
-        return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $stores->getBrands(), 'all_brands' => Brand::getAll()));
+        return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $store->getBrands(), 'all_brands' => Brand::getAll()));
     });
 
-    //paths for individual store edit pages
+    paths for individual store edit pages
+    $app->get("/stores/{id}/edit", function($id) use($app){
+            $stores = Store::find($id);
+            $brands = $store->getBrands();
+            return $app['twig']->render('edit_store.html.twig', array('store' => $store, 'brands' => $brands));
+        });
 
+    // $app->delete("/stores/{id}", function($id) use($app){
+    //         $store = Store::find($id);
+    //         $store->delete();
+    //         return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
+    //     });
 
     return $app;
 ?>

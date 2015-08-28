@@ -5,7 +5,7 @@
     <body>
         <h1>Edit {{ store.getName }}</h1>
 
-        <form action="/sstores/{{ store.getId }}" method="post">
+        <form action="/stores/{{ store.getId }}" method="post">
             <input name="_method" type="hidden" value="patch">
             <label for="store_name">Enter new Name:</label>
             <input name="store_name" type="text" value="{{ store.getName }}">
