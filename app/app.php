@@ -26,10 +26,26 @@
         return $app['twig']->render('index.html.twig');
     });
 
-    //path to Shoes list page
+    //paths for brands list page
     $app->get("/brands", function () use($app) {
         return $app['twig']->render('brands.html.twig', array('brands'=>Brand::getAll()));
     });
+
+    $app->post("/brands", function() use($app) {
+        $brand_name = $_POST['brand_name'];
+        $brand = new Brand($brand_name);
+        $brand->save();
+        return $app['twig']->render('brands.html.twig', array('brands' =>Brand::getAll()));
+    });
+
+    $app->post("/delete_brands", function() use($app) {
+        Brand::deleteAll();
+        return $app['twig']->render('brands.html.twig', array('brands' =>Brand::getAll()));
+    });
+
+
+
+
 
     return $app;
 ?>
