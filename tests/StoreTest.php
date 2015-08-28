@@ -63,7 +63,7 @@
         }
 
         //Save and Update Store Name tests
-        
+
         function testSave()
         {
             //Arrange
@@ -169,6 +169,27 @@
 
             //Assert
             $this->assertEquals($test_store, $result);
+        }
+
+        //tests for methods that interact with Brand class (and brands & brands_stores tables)
+
+        function test_addBrand()
+        {
+            //Assert
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            //Act
+            $result = [$test_brand];
+            $test_store->addBrand($test_student);
+
+            //Assert
+            $this->assertEquals($test_store->getBrands(), $result);
         }
 
     }

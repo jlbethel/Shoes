@@ -55,7 +55,7 @@
         }
 
 
-        //Static Methods
+        //Static Methods, note that the find method below finds a specific store
 
         static function getAll()
         {
@@ -87,6 +87,10 @@
             }
             return $found_store;
         }
+
+        //methods to interact with Brand class (and brands & brands_stores tables)
+
+
     }
 
 ?>

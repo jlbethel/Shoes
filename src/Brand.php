@@ -38,7 +38,7 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
-        //Static methods
+        //Static methods, note that the find method finds a specific brand
 
         static function getAll()
         {
