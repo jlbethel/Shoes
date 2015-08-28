@@ -129,10 +129,10 @@
             $test_brand2->save();
 
             //Act
-            $result = Brand::find($test_store->getId());
+            $result = Brand::find($test_brand->getId());
 
             //Assert
-            $this->assertEquals($test_store, $result);
+            $this->assertEquals($test_brand, $result);
         }
 
     }
