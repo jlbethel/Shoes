@@ -19,19 +19,7 @@
             Store::deleteAll();
         }
 
-        function testGetName()
-        {
-            //Arrange
-            $store_name = "Shoe World";
-            $test_store = new Store($store_name);
-
-            //Act
-            $result = $test_store->getName();
-
-            //Assert
-            $this->assertEquals($store_name, $result);
-        }
-
+        //Setter test
         function testSetName()
         {
             //Arrange
@@ -44,6 +32,20 @@
 
             //Assert
             $this->assertEquals("Shoe Depot", $result);
+        }
+
+        //Getter tests
+        function testGetName()
+        {
+            //Arrange
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+
+            //Act
+            $result = $test_store->getName();
+
+            //Assert
+            $this->assertEquals($store_name, $result);
         }
 
         function testGetId()
@@ -60,6 +62,7 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        //Save and Update Store Name tests
         function testSave()
         {
             //Arrange
@@ -77,7 +80,6 @@
         function testUpdateName()
         {
             //Arrange
-            //Arrange
             $store_name = "Shoe World";
             $test_store = new Store($store_name);
             $test_store->save();
@@ -93,6 +95,27 @@
             $this->assertEquals(Store::find($id), $result);
         }
 
+        //Test for deleting a single store
+        function test_delete()
+        {
+            //Arrange
+            $store_name = "Shoe World";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "Shoe Deopt" ;
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            //Act
+            $test_store->delete();
+            $result = Store::getAll();
+
+            //Assert
+            $this->assertEquals([$test_store2], $result);
+        }
+
+        //Static method tests
         function test_getAll()
         {
             //Arrange

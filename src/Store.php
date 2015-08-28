@@ -46,6 +46,9 @@
             $this->store_name = $new_name;
         }
 
+        //delete a single store
+        
+
 
         //Static Methods
         static function getAll()
