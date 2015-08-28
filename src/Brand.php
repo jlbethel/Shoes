@@ -30,7 +30,7 @@
             return $this->id;
         }
 
-        //Save and Update methods
+        //Save
 
         function save()
         {
