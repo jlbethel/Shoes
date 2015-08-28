@@ -57,7 +57,7 @@
         return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'stores' => $brand->getStores(), 'all_stores' => Store::getAll()));
     });
 
-    //paths to stores list page
+    //paths for stores list page
     $app->get("/stores", function () use($app) {
         return $app['twig']->render('stores.html.twig', array('stores'=>Store::getAll()));
     });
@@ -74,7 +74,7 @@
         return $app['twig']->render('stores.html.twig', array('stores' =>Store::getAll()));
     });
 
-    //paths to individual store pages
+    //paths for individual store pages
     $app->get("/stores/{id}", function($id) use($app){
         $store = Store::find($id);
         $brands = $store->getBrands();
@@ -87,6 +87,8 @@
         $store->addBrand($brand);
         return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $stores->getBrands(), 'all_brands' => Brand::getAll()));
     });
+
+    //paths for individual store edit pages
 
 
     return $app;

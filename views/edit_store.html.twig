@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Edit {{ store.getName }}</title>
+    </head>
+    <body>
+        <h1>Edit {{ store.getName }}</h1>
+
+        <form action="/sstores/{{ store.getId }}" method="post">
+            <input name="_method" type="hidden" value="patch">
+            <label for="store_name">Enter new Name:</label>
+            <input name="store_name" type="text" value="{{ store.getName }}">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/stores/{{ store.getId }}" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">Delete {{ store.getName }}</button>
+        </form>
+
+        <form action="/stores/{{ store.getId }}">
+            <button type="submit">Back</button>
+        </form>
+    </body>
+</html>
