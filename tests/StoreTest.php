@@ -74,7 +74,7 @@
             $this->assertEquals($test_store, $result[0]);
         }
 
-        function test_getALl()
+        function test_getAll()
         {
             //Arrange
             $store_name = "Shoe World";
@@ -82,7 +82,7 @@
             $test_store->save();
 
             $store_name2 = "Shoe Deopt" ;
-            $test_store2 = new Store($store_name);
+            $test_store2 = new Store($store_name2);
             $test_store2->save();
 
             //Act
