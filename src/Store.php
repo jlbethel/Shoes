@@ -19,8 +19,6 @@
             $this->store_name = $new_name;
         }
 
-
-
         //Getters
 
         function getName()
@@ -55,7 +53,7 @@
         }
 
 
-        //Static Methods, note that the find method below finds a specific store
+        //Static Methods, note that the find method below finds a specific store, and the delete all method deletes all stores as well as store ids from join table
 
         static function getAll()
         {
@@ -73,6 +71,7 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM stores;");
+            $GLOBALS['DB']->exec("DELETE FROM courses_students;");
         }
 
         static function find($search_id)

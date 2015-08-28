@@ -43,7 +43,12 @@
         return $app['twig']->render('brands.html.twig', array('brands' =>Brand::getAll()));
     });
 
-
+    //paths for individual brand pages
+    $app->get("/brands/{id}", function($id) use($app){
+        $brand = Brand::find($id);
+        $stores = $brand->getStores();
+        return $app['twig']->render('brand.html.twig', array('brand' => $brand, 'stores' => $stores, 'all_stores' => Store::getAll()));
+    });
 
 
 

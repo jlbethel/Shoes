@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>{{ brand.getName }}}</title>
+    </head>
+    <body>
+        <h1>{{ brand.getName }}</h1>
+        {% if stores is not empty %}
+        <p>Here are the stores that carry {{ brand.getName }}</p>
+        <ul>
+            {% for store in stores %}
+                <p>{{ store.getName }}
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p> No stores carry {{ brand.getName }}</p>
+        {% endif %}
+    </body>
+</html>

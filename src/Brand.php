@@ -38,7 +38,7 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
-        //Static methods, note that the find method finds a specific brand
+        //Static methods, note that the find method finds a specific brand, and the delete all method deletes all brands as well as all brand ids from the join table.
 
         static function getAll()
         {
@@ -56,6 +56,7 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM brands;");
+            $GLOBALS['DB']->exec("DELETE FROM courses_students;");
         }
 
         static function find($search_id)
