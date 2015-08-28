@@ -171,7 +171,7 @@
             $this->assertEquals($test_store, $result);
         }
 
-        //tests for methods that interact with Brand class (and brands & brands_stores tables)
+        //tests methods that interact with join tables or use join statements
 
         function test_addBrand()
         {
@@ -186,7 +186,7 @@
 
             //Act
             $result = [$test_brand];
-            $test_store->addBrand($test_student);
+            $test_store->addBrand($test_brand);
 
             //Assert
             $this->assertEquals($test_store->getBrands(), $result);

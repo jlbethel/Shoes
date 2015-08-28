@@ -88,9 +88,12 @@
             return $found_store;
         }
 
-        //methods to interact with Brand class (and brands & brands_stores tables)
+        //methods that interact with join tables or use join statements
 
-
+        function addBrand($brand)
+        {
+            $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$brand->getId()}, {$this->getId()});");
+        }
     }
 
 ?>
