@@ -14,5 +14,21 @@
         {% else %}
             <p> No stores carry {{ brand.getName }}</p>
         {% endif %}
+
+        <form action="/add_stores" method="post">
+            <input type="hidden" name="brand_id" value="{{ brand.getId }}">
+            <label for="store_id">Select a store</label>
+            <select name="store_id" type="text">
+                {% for store in all_stores %}
+                    <option value="{{ store.getId }}">{{ store.getName }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Add store to {{ brand.getName }}</button>
+        </form>
+
+
+        <form action="/brands">
+            <button type="submit">Back</button>
+        </form>
     </body>
 </html>
