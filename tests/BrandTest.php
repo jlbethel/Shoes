@@ -20,5 +20,19 @@
             Store::deleteAll();
         }
 
+        //Setter test
+        function testSetName()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+
+            //Act
+            $test_brand->setName("Evolv");
+            $result = $test_brand->getName();
+
+            //Assert
+            $this->assertEquals("Evolv", $result);
+        }
     }
 ?>
