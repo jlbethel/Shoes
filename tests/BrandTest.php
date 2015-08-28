@@ -63,5 +63,58 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        //Save and Update Brand name tests
+
+        function testSave()
+        {
+            //Arrange
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            //Act
+            $result = Brand::getAll();
+
+            //Assert
+            $this->assertEquals($test_brand, $result[0]);
+        }
+
+        //Static Method tests
+        function test_getAll();
+        {
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $brand_name2 = "Evolv";
+            $test_brand2 = new Brand($brand_name2);
+            $test_brand2->save();
+
+            //Act
+            $result = Brand::getAll();
+
+            //Assert
+            $this->assertEquals([$test_brand2, $test_store], $result);
+        }
+
+        function test_deleteAll()
+        {
+            $brand_name = "La Sportiva";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $brand_name2 = "Evolv";
+            $test_brand2 = new Brand($brand_name2);
+            $test_brand2->save();
+
+            //Act
+            Brand::deleteAll()
+            $result = Brand::getAll();
+
+            //Assert
+            $this->assertEquals([], $result);
+
+        }
+
     }
 ?>
