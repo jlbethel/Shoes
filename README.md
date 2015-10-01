@@ -1,11 +1,11 @@
-#To Do Exercise
-#####Shoes App
+#Shoe Store
+#####Shoes Store App
 
 ####By Jason Bethel
 
 ##Description
 
-An app that allows users to add stylists to a database via a webpage. There are options to add clients to individual stylists, as well as delete the stylists and the clients.
+An app that allows users to add stylists to a database via a webpagshoe brands to different shoe stores.
 
 ##Setup
 
