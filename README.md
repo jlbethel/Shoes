@@ -5,7 +5,7 @@
 
 ##Description
 
-An app that allows users to add stylists to a database via a webpagshoe brands to different shoe stores.
+An app that allows users to create shoe brands and create shoe stores. The app has the ability to assign and remove brands from shoe stores.
 
 ##Setup
 
